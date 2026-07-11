@@ -1,0 +1,15 @@
+{
+  "name": "ivoire-monade-obm-agentic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OSS OBM agentic pour marche ivoirien et africain",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build"
+  }
+}
