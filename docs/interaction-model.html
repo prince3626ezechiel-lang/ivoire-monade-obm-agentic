@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgenticMart — Modèle d'interaction OBM/OSS/Utilisateurs</title>
+<style>
+  :root {
+    --bg: #0b0c10;
+    --card: #11141a;
+    --text: #e6e8eb;
+    --muted: #9aa3af;
+    --accent: #f59e0b;
+    --brand: #0ea5e9;
+    --obm: #f59e0b;
+    --users: #22c55e;
+    --oss: #0ea5e9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: linear-gradient(180deg, #0b0c10, #0e1117);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    line-height: 1.6;
+    padding: 28px 18px;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 22px; letter-spacing: .3px; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 22px; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 980px) { .grid { grid-template-columns: 1fr; } }
+
+  .col {
+    background: var(--card);
+    border: 1px solid #1f2330;
+    border-radius: 16px;
+    padding: 18px;
+  }
+  .col h2 { font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 0 rgba(34,197,95,.5); animation: pulse 2s infinite; }
+  .dot.obm { background: var(--obm); box-shadow: 0 0 0 0 rgba(245,158,11,.5); }
+  .dot.users { background: var(--users); }
+  .dot.oss { background: var(--oss); }
+
+  .tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #0c0f14; border: 1px solid #1c2230; color: var(--text);
+    padding: 8px 10px; border-radius: 999px; font-size: 12px; margin: 6px 4px 0 0;
+  }
+
+  .flows { margin-top: 22px; }
+  .flow-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .arrow { color: var(--muted); font-size: 12px; }
+  .pill { background: #0c0f14; border: 1px solid #1c2230; color: #cbd5e1; padding: 10px 12px; border-radius: 10px; font-size: 13px; }
+
+  footer { margin-top: 24px; color: #6b7280; font-size: 12px; text-align: center; }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(245,158,11,.4); }
+    70% { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+    100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AgenticMart — Modèle d'interaction</h1>
+  <div class="sub">Trois acteurs interconnectés : OBM / Utilisateurs / OSS. Chaque flux est tracé, mesurable, et automatisé.</div>
+
+  <div class="grid">
+    <div class="col">
+      <h2><span class="dot obm"></span> Toi (OBM)</h2>
+      <div class="tag">🎯 Stratégie</div>
+      <div class="tag">📋 Séquences WhatsApp</div>
+      <div class="tag">💰 Budgets / Closing</div>
+      <div class="tag">🎬 Scripts vidéo XCMG/FAW</div>
+      <div class="tag">✅ Validation dashboards</div>
+    </div>
+
+    <div class="col">
+      <h2><span class="dot users"></span> Utilisateurs clients</h2>
+      <div class="tag">👀 Vues YouTube/Shorts</div>
+      <div class="tag">🌍 Visite landing</div>
+      <div class="tag">💬 Message WhatsApp</div>
+      <div class="tag">🧾 Demande de devis</div>
+      <div class="tag">🤝 Contrat / Paiement</div>
+    </div>
+
+    <div class="col">
+      <h2><span class="dot oss"></span> OSS AgenticMart</h2>
+      <div class="tag">🤖 Agents IA</div>
+      <div class="tag">🛒 Marketplace</div>
+      <div class="tag">🔐 Security Center</div>
+      <div class="tag">📦 Odoo / Shopify</div>
+      <div class="tag">📊 Admin / Vendor</div>
+    </div>
+  </div>
+
+  <div class="flows">
+    <div class="flow-row">
+      <span class="pill">YouTube/Shorts → Landing ivoire-monade.shop</span>
+      <span class="arrow">→</span>
+      <span class="pill">WhatsApp CTA → Scripts qualification</span>
+      <span class="arrow">→</span>
+      <span class="pill">Devis 48h → Closing</span>
+      <span class="arrow">→</span>
+      <span class="pill">Order Odoo/Shopify → Livraison FAW</span>
+    </div>
+    <div class="flow-row" style="margin-top:10px">
+      <span class="pill">Supervision OBM</span>
+      <span class="arrow">↔</span>
+      <span class="pill">Dashboards Admin + Security</span>
+      <span class="arrow">↔</span>
+      <span class="pill">Agents IA recommandation / fraude / inventaire</span>
+    </div>
+  </div>
+
+  <footer>IVOIRE MONADE — AgenticMart OSS — ivoire-monade.shop</footer>
+</div>
+</body>
+</html>
