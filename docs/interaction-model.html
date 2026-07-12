@@ -12,9 +12,9 @@
     --muted: #9aa3af;
     --accent: #f59e0b;
     --brand: #0ea5e9;
-    --obm: #f59e0b;
-    --users: #22c55e;
-    --oss: #0ea5e9;
+    --ok: #22c55e;
+    --warn: #eab308;
+    --bad: #ef4444;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -38,10 +38,10 @@
     padding: 18px;
   }
   .col h2 { font-size: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; box-shadow: 0 0 0 0 rgba(34,197,95,.5); animation: pulse 2s infinite; }
-  .dot.obm { background: var(--obm); box-shadow: 0 0 0 0 rgba(245,158,11,.5); }
-  .dot.users { background: var(--users); }
-  .dot.oss { background: var(--oss); }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.obm { background: var(--accent); }
+  .dot.users { background: var(--ok); }
+  .dot.oss { background: var(--brand); }
 
   .tag {
     display: inline-flex; align-items: center; gap: 6px;
@@ -53,20 +53,23 @@
   .flow-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .arrow { color: var(--muted); font-size: 12px; }
   .pill { background: #0c0f14; border: 1px solid #1c2230; color: #cbd5e1; padding: 10px 12px; border-radius: 10px; font-size: 13px; }
+  .pill.ok { border-color: #14532d; color: var(--ok); }
+  .pill.warn { border-color: #422006; color: var(--warn); }
+  .pill.bad { border-color: #450a0a; color: var(--bad); }
+
+  .status { margin-top: 18px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .status { grid-template-columns: 1fr; } }
+  .status div { background: #0c0f14; border: 1px solid #1c2230; border-radius: 12px; padding: 12px; font-size: 13px; }
+  .status .label { color: var(--muted); font-size: 12px; }
+  .status .value { color: var(--text); font-weight: 600; margin-top: 4px; }
 
   footer { margin-top: 24px; color: #6b7280; font-size: 12px; text-align: center; }
-
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(245,158,11,.4); }
-    70% { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
-    100% { box-shadow: 0 0 0 0 rgba(245,158,11,0); }
-  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>AgenticMart — Modèle d'interaction</h1>
-  <div class="sub">Trois acteurs interconnectés : OBM / Utilisateurs / OSS. Chaque flux est tracé, mesurable, et automatisé.</div>
+  <div class="sub">Trois acteurs interconnectés : OBM / Utilisateurs / OSS. Connexion validée : <span class="pill ok">ivoire-monade.shop accessible</span></div>
 
   <div class="grid">
     <div class="col">
@@ -99,20 +102,39 @@
 
   <div class="flows">
     <div class="flow-row">
-      <span class="pill">YouTube/Shorts → Landing ivoire-monade.shop</span>
+      <span class="pill ok">YouTube/Shorts → Landing ivoire-monade.shop</span>
       <span class="arrow">→</span>
-      <span class="pill">WhatsApp CTA → Scripts qualification</span>
+      <span class="pill ok">WhatsApp CTA → Scripts qualification</span>
       <span class="arrow">→</span>
-      <span class="pill">Devis 48h → Closing</span>
+      <span class="pill ok">Devis 48h → Closing</span>
       <span class="arrow">→</span>
-      <span class="pill">Order Odoo/Shopify → Livraison FAW</span>
+      <span class="pill ok">Order Odoo/Shopify → Livraison FAW</span>
     </div>
     <div class="flow-row" style="margin-top:10px">
-      <span class="pill">Supervision OBM</span>
+      <span class="pill ok">Supervision OBM</span>
       <span class="arrow">↔</span>
-      <span class="pill">Dashboards Admin + Security</span>
+      <span class="pill ok">Dashboards Admin + Security</span>
       <span class="arrow">↔</span>
-      <span class="pill">Agents IA recommandation / fraude / inventaire</span>
+      <span class="pill ok">Agents IA recommandation / fraude / inventaire</span>
+    </div>
+  </div>
+
+  <div class="status">
+    <div>
+      <div class="label">Landing</div>
+      <div class="value">https://ivoire-monade.shop/ → <span style="color:var(--ok)">200</span></div>
+    </div>
+    <div>
+      <div class="label">App /app</div>
+      <div class="value">https://ivoire-monade.shop/app/ → <span style="color:var(--ok)">200</span></div>
+    </div>
+    <div>
+      <div class="label">API /api/health</div>
+      <div class="value">https://ivoire-monade.shop/api/health → <span style="color:var(--ok)">200</span></div>
+    </div>
+    <div>
+      <div class="label">Sécurité</div>
+      <div class="value">HTTP→HTTPS + headers + CORS + try_files fixés</div>
     </div>
   </div>
 
