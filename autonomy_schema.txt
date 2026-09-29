@@ -1,0 +1,65 @@
+╔══════════════════════════════════════════════════════════════╗
+║              EON10 DR DOOM — AUTONOMY SCHEMA                ║
+║                    jev + gpt6 Loop                           ║
+╚══════════════════════════════════════════════════════════════╝
+
+   ┌─────────────────────────────────────────────────────────┐
+   │                    OBSERVE                              │
+   │              (Data Collection)                          │
+   │  • Market data  • User messages  • Bot interactions    │
+   └──────────────────────┬──────────────────────────────────┘
+                          │
+                          ▼
+   ┌─────────────────────────────────────────────────────────┐
+   │                   ORIENT                                │
+   │              (Analysis Phase)                           │
+   │  • jev-latest (TypeSafe)                               │
+   │  • Reasoning via /v1/systemone                         │
+   │  • Decision: proceed / review / block                  │
+   └──────────────────────┬──────────────────────────────────┘
+                          │
+                          ▼
+   ┌─────────────────────────────────────────────────────────┐
+   │                    DECIDE                               │
+   │              (Decision Phase)                           │
+   │  • jev returns decision                                │
+   │  • If proceed → continue                               │
+   │  • If review → ask user                               │
+   │  • If block → stop                                     │
+   └──────────────────────┬──────────────────────────────────┘
+                          │
+                          ▼
+   ┌─────────────────────────────────────────────────────────┐
+   │                     ACT                                 │
+   │              (Action Phase)                             │
+   │  • gpt-6-luna (Chat)                                   │
+   │  • Content via /api/v1/chat/completions                │
+   │  • Generate response / render / deploy                 │
+   └──────────────────────┬──────────────────────────────────┘
+                          │
+                          ▼
+   ┌─────────────────────────────────────────────────────────┐
+   │                   LOOP BACK                             │
+   │              (Measure + Adjust)                         │
+   │  • RAG MCP measures results                            │
+   │  • Adjust next cycle                                   │
+   │  • Return to OBSERVE                                   │
+   └─────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────┐
+   │              MODEL ROUTING                              │
+   │                                                         │
+   │  jev-latest    → Reasoning / Decision / Systemone       │
+   │  gpt-6-luna    → Content / Chat / Completion           │
+   │  claude-haiku  → Backup / Quick tasks                  │
+   │  gemma-4       → Free tier / Simple tasks              │
+   └─────────────────────────────────────────────────────────┘
+
+   ┌─────────────────────────────────────────────────────────┐
+   │              DEPLOYMENT                                 │
+   │                                                         │
+   │  Local  → Hermes Agent (default profile)                │
+   │  VPS    → 185.172.57.118 (SSH pending)                  │
+   │  Bot    → @EON10_bot (Telegram)                         │
+   │  App    → React Native (Expo)                           │
+   └─────────────────────────────────────────────────────────┘

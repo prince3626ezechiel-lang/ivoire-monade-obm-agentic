@@ -1,0 +1,1 @@
+{"version": "1.0.0", "project": "EON10 DR DOOM", "date": "2026-09-29", "status": "active", "pipeline": "reverse-engineering", "results": {"actors": 6, "inputs": 8, "process_steps": 6, "decisions": 8, "exceptions": 6, "outputs": 8, "kpis": 8, "unknowns": 8}, "constitutions": {"master": true, "input": true, "process": true, "decision": true, "output": true}}

@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "EON10Secrets",
+    "slug": "eon10secrets",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": {
+      "supportsTablet": true,
+      "infoStrip": {
+        "config": {
+          "usesNonExemptEncryption": false
+        }
+      }
+    },
+    "android": {
+      "package": "com.eon10.secrets",
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "plugins": ["expo-secure-store"]
+  }
+}

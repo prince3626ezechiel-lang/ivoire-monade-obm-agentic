@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "project": "EON10 DR DOOM",
+  "created": "2026-09-29",
+  "status": "active",
+  "user": {
+    "name": "Emmanuel TOURÉ",
+    "id": 6499054466,
+    "profil": "default"
+  },
+  "mcp": {
+    "saas": {"status": "ready", "type": "friendises", "revenue": "abo+commission"},
+    "aaaiia": {"status": "ready", "type": "community"},
+    "rag": {"status": "ready", "type": "marche"}
+  },
+  "bot": {
+    "token": "8680913270:AAERwtVz1xpVz8xACgCZpWTeYmeNTqxZdn4",
+    "username": "EON10_bot",
+    "mode": "autoclaw",
+    "active": true
+  },
+  "explabs": {
+    "org_id": "d4f8bcca-8cfc-4723-826e-ed58399146ad",
+    "key_prefix": "xpl_08b9",
+    "models": ["jev-latest", "gpt-6-luna"]
+  },
+  "secrets": {
+    "EXPLABS_API_KEY": "stored",
+    "EON10_BOT_TOKEN": "stored"
+  },
+  "loop": {
+    "step": 1,
+    "total": 5,
+    "status": "init"
+  },
+  "stats": {
+    "users": 0,
+    "commands": 0,
+    "renders": 0,
+    "errors": 0
+  }
+}

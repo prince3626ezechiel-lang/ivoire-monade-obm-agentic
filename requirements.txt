@@ -1,0 +1,3 @@
+python-telegram-bot>=22.0
+expo-secure-store
+@react-native-async-storage/async-storage
